@@ -31,7 +31,7 @@ const CustomerDashboard = () => {
   const handleTransaction = async (type, amount) => {
     try {
       const res = await api.post(
-        `/transactions/${type}`,
+        `/api/transactions/${type}`,
         { amount },
         {
           headers: { Authorization: `Bearer ${token}` },

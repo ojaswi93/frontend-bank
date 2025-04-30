@@ -11,7 +11,7 @@ const BankerDashboard = () => {
 
   useEffect(() => {
     const fetchCustomers = async () => {
-      const res = await api.get("/admin/customers", {
+      const res = await api.get("/api/admin/customers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCustomers(res.data);

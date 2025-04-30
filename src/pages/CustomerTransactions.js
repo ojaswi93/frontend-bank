@@ -10,7 +10,7 @@ const CustomerTransactions = () => {
 
   useEffect(() => {
     const fetchTransactions = async () => {
-      const res = await api.get(`/admin/transactions/${userId}`, {
+      const res = await api.get(`/api/admin/transactions/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTransactions(res.data);
