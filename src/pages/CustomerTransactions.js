@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import api from "../api/axios";
 
 const CustomerTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -9,12 +10,9 @@ const CustomerTransactions = () => {
 
   useEffect(() => {
     const fetchTransactions = async () => {
-      const res = await axios.get(
-        `http://localhost:5000/api/admin/transactions/${userId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      const res = await api.get(`/admin/transactions/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setTransactions(res.data);
     };
 

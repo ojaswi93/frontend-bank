@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles.css"; // Import your global styles
+import api from "../api/axios";
 
 const BankerDashboard = () => {
   const [customers, setCustomers] = useState([]);
@@ -10,7 +11,7 @@ const BankerDashboard = () => {
 
   useEffect(() => {
     const fetchCustomers = async () => {
-      const res = await axios.get("http://localhost:5000/api/admin/customers", {
+      const res = await api.get("/admin/customers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCustomers(res.data);

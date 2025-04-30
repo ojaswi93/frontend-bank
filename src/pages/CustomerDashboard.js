@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TransactionPopup from "../components/TransactionPopup";
 import "../assets/styles.css"; // Import your global styles
+import api from "../api/axios";
 
 const CustomerDashboard = () => {
   const [transactions, setTransactions] = useState([]);
@@ -15,7 +16,7 @@ const CustomerDashboard = () => {
   }, []);
 
   const fetchTransactions = async () => {
-    const res = await axios.get("http://localhost:5000/api/transactions", {
+    const res = await api.get("/transactions", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setTransactions(res.data);
@@ -29,9 +30,8 @@ const CustomerDashboard = () => {
 
   const handleTransaction = async (type, amount) => {
     try {
-      const url = `http://localhost:5000/api/transactions/${type}`;
-      const res = await axios.post(
-        url,
+      const res = await api.post(
+        `/transactions/${type}`,
         { amount },
         {
           headers: { Authorization: `Bearer ${token}` },
