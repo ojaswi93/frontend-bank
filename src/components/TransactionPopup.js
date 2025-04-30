@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css"; // Import your global styles or use this locally
+import "../assets/styles.css"; // Import your global styles or use this locally
 
 const TransactionPopup = ({ type, onClose, onSubmit, balance }) => {
   const [amount, setAmount] = useState("");

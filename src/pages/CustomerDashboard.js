@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TransactionPopup from "../components/TransactionPopup";
-import "./styles.css"; // Import your global styles
+import "../assets/styles.css"; // Import your global styles
 
 const CustomerDashboard = () => {
   const [transactions, setTransactions] = useState([]);

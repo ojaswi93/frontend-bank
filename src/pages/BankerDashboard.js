@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./styles.css"; // Import your global styles
+import "../assets/styles.css"; // Import your global styles
 
 const BankerDashboard = () => {
   const [customers, setCustomers] = useState([]);
