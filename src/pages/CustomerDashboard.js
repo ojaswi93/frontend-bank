@@ -16,7 +16,7 @@ const CustomerDashboard = () => {
   }, []);
 
   const fetchTransactions = async () => {
-    const res = await api.get("/transactions", {
+    const res = await api.get("/api/transactions", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setTransactions(res.data);
