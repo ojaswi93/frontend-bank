@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../assets/styles.css";
+import "./styles.css"; // Import your global styles
 
 const BankerDashboard = () => {
   const [customers, setCustomers] = useState([]);
@@ -20,10 +20,10 @@ const BankerDashboard = () => {
   }, [token]);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="container center">
       <h2>Banker Dashboard</h2>
       <h4>All Customers</h4>
-      <table border="1" style={{ margin: "auto" }}>
+      <table>
         <thead>
           <tr>
             <th>Email</th>

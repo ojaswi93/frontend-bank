@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles.css"; // Import your global styles or use this locally
 
 const TransactionPopup = ({ type, onClose, onSubmit, balance }) => {
   const [amount, setAmount] = useState("");
@@ -17,17 +18,7 @@ const TransactionPopup = ({ type, onClose, onSubmit, balance }) => {
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: "30%",
-        left: "40%",
-        padding: 20,
-        backgroundColor: "white",
-        border: "1px solid gray",
-        boxShadow: "0 0 10px rgba(0,0,0,0.5)",
-      }}
-    >
+    <div className="popup">
       <h3>{type === "deposit" ? "Deposit" : "Withdraw"} Money</h3>
       <p>Available Balance: ${balance.toFixed(2)}</p>
       <input
@@ -39,7 +30,7 @@ const TransactionPopup = ({ type, onClose, onSubmit, balance }) => {
       <br />
       <br />
       <button onClick={handleSubmit}>Submit</button>
-      <button onClick={onClose} style={{ marginLeft: 10 }}>
+      <button onClick={onClose} className="cancel-btn">
         Cancel
       </button>
     </div>

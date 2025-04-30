@@ -75,3 +75,23 @@ body {
     text-align: center;
   }
   
+  .popup {
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+  }
+  
+  .cancel-btn {
+    margin-left: 10px;
+    background-color: #f44336;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935;
+  }
+  

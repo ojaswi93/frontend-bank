@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TransactionPopup from "../components/TransactionPopup";
+import "./styles.css"; // Import your global styles
 
 const CustomerDashboard = () => {
   const [transactions, setTransactions] = useState([]);
-  const [popupType, setPopupType] = useState(null); // 'deposit' or 'withdraw'
+  const [popupType, setPopupType] = useState(null);
   const [balance, setBalance] = useState(0);
 
   const token = localStorage.getItem("token");
@@ -45,14 +46,14 @@ const CustomerDashboard = () => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="container center">
       <h2>Customer Dashboard</h2>
       <h3>Balance: ${balance.toFixed(2)}</h3>
       <button onClick={() => setPopupType("deposit")}>Deposit</button>
       <button onClick={() => setPopupType("withdraw")}>Withdraw</button>
 
       <h4>Transaction History</h4>
-      <table border="1" style={{ margin: "auto" }}>
+      <table>
         <thead>
           <tr>
             <th>Type</th>
