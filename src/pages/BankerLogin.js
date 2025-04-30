@@ -10,7 +10,7 @@ const BankerLogin = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await api.post("/auth/login", {
+      const res = await api.post("/api/auth/login", {
         email,
         password,
       });
